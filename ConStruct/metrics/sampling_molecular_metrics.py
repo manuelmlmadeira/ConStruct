@@ -8,7 +8,7 @@ import wandb
 import torch.nn as nn
 
 from ConStruct.utils import PlaceHolder
-import fcd
+# import fcd
 import numpy as np
 
 allowed_bonds = {

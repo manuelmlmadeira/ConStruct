@@ -34,7 +34,7 @@ This code was tested with PyTorch 2.0.1, cuda 11.8 and torch_geometrics 2.3.1
     
     ```pip install -e .```
 
-  - Navigate to the ./src/analysis/orca directory and compile orca.cpp: 
+  - Navigate to the ./ConStruct/analysis/orca directory and compile orca.cpp: 
     
      ```g++ -O2 -std=c++11 -o orca orca.cpp```
 
@@ -42,9 +42,8 @@ This code was tested with PyTorch 2.0.1, cuda 11.8 and torch_geometrics 2.3.1
 ## Run the code
   
   - All code is currently launched through `python3 main.py`. Check hydra documentation (https://hydra.cc/) for overriding default parameters.
-  - To run the debugging code: `python3 main.py +experiment=debug.yaml`. We advise to try to run the debug mode first
-    before launching full experiments.
-  - To run a code on only a few batches: `python3 main.py general.name=test`.
+  - To run the debugging code: `python3 main.py +experiment=debug.yaml`. We advise to try to run the debug mode first before launching full experiments.
   - To run the diffusion model: `python3 main.py`
   - You can specify the dataset with `python3 main.py dataset=tree`. Look at `configs/dataset` for the list of datasets that are currently available
-  - To test, specify the path to a model with the flag `general.test_only`, it will load the model and test it `python3 main.py +experiment=tree general.test_only=<path>`
+  - To reproduce the experiments in the paper, please add the flag `+experiment` to  get the correct configuration: `python3 main.py +experiment=<dataset_name>`
+  - To test the obtained models, specify the path to a model with the flag `general.test_only`, it will load the model and test it, e.g., `python3 main.py +experiment=tree general.test_only=<path>`

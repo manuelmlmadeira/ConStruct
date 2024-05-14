@@ -146,13 +146,12 @@ archives/*
 results/*.ckpt
 results/qm9_molecules_h
 results/qm9_molecules_noh
-dgd/analysis/orca/orca
 results/*
 ggg_data/
 ggg_utils/
 saved_models
-src/analysis/orca/orca
-src/analysis/orca/tmp*
+ConStruct/analysis/orca/orca
+ConStruct/analysis/orca/tmp*
 
 # Trained_models
 trained_models/
@@ -161,5 +160,3 @@ plots/
 figures_paper/
 plots_tls_dists/
 digipath_data/
-
-ConStruct/analysis/orca/*
