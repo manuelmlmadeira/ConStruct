@@ -1,0 +1,35 @@
+# @package _global_
+general:
+    name : 'lobster'
+    wandb: 'online'
+    resume: null            # If resume, path to ckpt file from outputs directory in main directory
+    test_only: null
+    check_val_every_n_epochs: 300
+    sample_every_val: 4
+    samples_to_generate: 40
+    samples_to_save: 9
+    chains_to_save: 1
+    final_model_samples_to_generate: 100
+    final_model_samples_to_save: 20
+    final_model_chains_to_save: 10
+train:
+    n_epochs: 100000
+    batch_size: 32
+    save_model: True
+model:
+    diffusion_steps: 500
+    n_layers: 10
+
+    # Do not set hidden_mlp_E, dim_ffE too high, computing large tensors on the edges is costly
+    # At the moment (03/08), y contains quite little information
+    hidden_mlp_dims: { 'X': 128, 'E': 64, 'y': 128 }
+
+    # The dimensions should satisfy dx % n_head == 0
+    hidden_dims: { 'dx': 256, 'de': 64, 'dy': 64, 'n_head': 8, 'dim_ffX': 256, 'dim_ffE': 64, 'dim_ffy': 256 }
+
+dataset:
+    name: lobster
+    remove_h: null
+    datadir: 'data/lobster'
+    adaptive_loader: False
+    fraction: 1.0

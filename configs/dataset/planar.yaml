@@ -1,0 +1,5 @@
+name: planar
+remove_h: null
+datadir: 'data/planar'
+adaptive_loader: False
+fraction: 1.0

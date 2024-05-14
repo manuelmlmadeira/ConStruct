@@ -1,0 +1,5 @@
+name: high_tls
+remove_h: null
+datadir: 'data/high_tls'
+adaptive_loader: False
+num_graphs: 200

@@ -1,0 +1,16 @@
+defaults:
+    - _self_
+    - general : general_default
+    - model : discrete
+    - train : train_default
+    - dataset : planar
+
+hydra:
+  job:
+    chdir: True
+  run:
+    dir: ../outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}-${general.name}
+
+
+
+

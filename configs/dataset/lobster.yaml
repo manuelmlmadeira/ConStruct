@@ -1,0 +1,5 @@
+name: lobster
+remove_h: null
+datadir: 'data/lobster'
+adaptive_loader: False
+fraction: 1.0
