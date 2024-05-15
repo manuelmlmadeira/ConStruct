@@ -17,7 +17,7 @@ from ConStruct.metrics.metrics_utils import (
     total_variation1d,
 )
 
-from ConStruct.planar.planar_utils import has_lobster_components
+from ConStruct.projector.projector_utils import has_lobster_components
 
 
 class SamplingMetrics(nn.Module):
@@ -382,7 +382,7 @@ def no_cycles_ratio(generated_graphs: List[PlaceHolder]):
     return no_cycles_tg
 
 
-from ConStruct.planar.planar_utils import has_lobster_components
+from ConStruct.projector.projector_utils import has_lobster_components
 
 
 def lobster_components_ratio(generated_graphs: List[PlaceHolder]):

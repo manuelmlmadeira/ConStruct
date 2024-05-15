@@ -1,6 +1,13 @@
+###############################################################################
+#
+# Adapted from https://github.com/satemochi/is_planar/
+#
+###############################################################################
+
+
 from collections import defaultdict
 from itertools import islice
-from planar.is_planar.fringe import fringe
+from projector.is_planar.fringe import fringe
 
 __all__ = ["is_planar"]
 

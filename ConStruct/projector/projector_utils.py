@@ -6,7 +6,7 @@ import time
 import torch
 import torch.nn.functional as F
 
-from planar.is_planar import is_planar
+from projector.is_planar import is_planar
 from ConStruct.utils import PlaceHolder
 
 

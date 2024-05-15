@@ -1,8 +1,14 @@
+###############################################################################
+#
+# Adapted from https://github.com/satemochi/is_planar/
+#
+###############################################################################
+
 from collections import deque
 
 
 class fringe_opposed_subset:
-    """ The class of the fringe-opposed subset
+    """The class of the fringe-opposed subset
 
     Roughly speaking, a fringe-opposed subset maintains the property of
     the T-alike/T-opposite relations for traversed back edges.
@@ -39,17 +45,22 @@ class fringe_opposed_subset:
            https://core.ac.uk/download/pdf/82483715.pdf
     """
 
-    __slots__ = ['c']
+    __slots__ = ["c"]
 
     def __init__(self, h):
         self.c = [deque([h]), deque()]
 
     def __repr__(self):
-        """ Print in terminal with colors
-            see https://stackoverflow.com/questions/287871/
+        """Print in terminal with colors
+        see https://stackoverflow.com/questions/287871/
         """
-        return ('\33[1m\33[90m(\33[0m' + str(list(self.c[0])) +
-                ', ' + str(list(self.c[1])) + '\33[1m\33[90m)\33[0m')
+        return (
+            "\33[1m\33[90m(\33[0m"
+            + str(list(self.c[0]))
+            + ", "
+            + str(list(self.c[1]))
+            + "\33[1m\33[90m)\33[0m"
+        )
 
     @property
     def left(self):

@@ -1,6 +1,12 @@
+###############################################################################
+#
+# Adapted from https://github.com/satemochi/is_planar/
+#
+###############################################################################
+
 from itertools import islice
 from collections import deque
-from planar.is_planar.fringe_opposed_subset import fringe_opposed_subset as fop
+from projector.is_planar.fringe_opposed_subset import fringe_opposed_subset as fop
 
 
 class fringe:
