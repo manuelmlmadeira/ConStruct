@@ -18,7 +18,6 @@ from diffusion.noise_model import (
     MarginalTransition,
     AbsorbingTransition,
     AbsorbingEdgesTransition,
-    PlanarTransition,
 )
 from ConStruct.diffusion import diffusion_utils
 from metrics.train_metrics import TrainLoss
@@ -32,9 +31,9 @@ from ConStruct.metrics.abstract_metrics import TrainAbstractMetrics
 from ConStruct.metrics.train_metrics import TrainMolecularMetrics
 from ConStruct.metrics.abstract_metrics import XKl, ChargesKl, EKl
 from ConStruct.datasets.adaptive_loader import effective_batch_size
-from ConStruct.planar import planar_utils
-import ConStruct.planar.is_planar.is_planar as is_planar
-from ConStruct.planar.planar_utils import (
+from ConStruct.projector import projector_utils
+import ConStruct.projector.is_planar.is_planar as is_planar
+from ConStruct.projector.projector_utils import (
     PlanarProjector,
     TreeProjector,
     LobsterProjector,
@@ -154,20 +153,6 @@ class DiscreteDenoisingDiffusion(pl.LightningModule):
                 e_marginals=self.dataset_infos.edge_types,
                 charges_marginals=self.dataset_infos.charges_marginals,
                 y_classes=self.output_dims.y,
-            )
-        elif cfg.model.transition == "planar":
-            print(
-                f"Noise model: {cfg.model.transition}.   "
-                f"Marginal distribution of the classes: nodes: {self.dataset_infos.atom_types} --"
-                f" edges: {self.dataset_infos.edge_types} --"
-                f"charges: {self.dataset_infos.charges_marginals}"
-            )
-            self.noise_model = PlanarTransition(
-                x_marginals=self.dataset_infos.atom_types,
-                e_marginals=self.dataset_infos.edge_types,
-                charges_marginals=self.dataset_infos.charges_marginals,
-                y_classes=self.output_dims.y,
-                cfg=cfg,
             )
         else:
             assert ValueError(
