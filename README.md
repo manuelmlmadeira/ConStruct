@@ -47,3 +47,4 @@ This code was tested with PyTorch 2.0.1, cuda 11.8 and torch_geometrics 2.3.1
   - You can specify the dataset with `python3 main.py dataset=tree`. Look at `configs/dataset` for the list of datasets that are currently available
   - To reproduce the experiments in the paper, please add the flag `+experiment` to  get the correct configuration: `python3 main.py +experiment=<dataset_name>`
   - To test the obtained models, specify the path to a model with the flag `general.test_only`, it will load the model and test it, e.g., `python3 main.py +experiment=tree general.test_only=<path>`
+  - Importantly, the projector is controlled by the flag `model.rev_proj` (options for now: `planar`, `tree`, or `lobster`); the edge-absorbing edge noise model is set through `model.transiton=absorbing_edges`.
