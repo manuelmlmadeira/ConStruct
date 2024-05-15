@@ -1,5 +1,5 @@
 # Model settings
-transition: 'marginal'                          # uniform or marginal or planar
+transition: 'absorbing_edges'                          # uniform or marginal or planar
 diffusion_steps: 500
 n_layers: 5
 
@@ -29,7 +29,7 @@ nu:
   e: 1
   y: 1
 
-rev_proj: False
+rev_proj: False  # planar or tree or lobster
 dropout: 0.1
 dropout_in_and_out: False
 cycle_features: True

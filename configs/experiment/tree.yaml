@@ -26,6 +26,7 @@ model:
 
     # The dimensions should satisfy dx % n_head == 0
     hidden_dims: { 'dx': 256, 'de': 64, 'dy': 64, 'n_head': 8, 'dim_ffX': 256, 'dim_ffE': 64, 'dim_ffy': 256 }
+    rev_proj: tree
 
 dataset:
     name: tree
