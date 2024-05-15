@@ -201,7 +201,7 @@ def setup_wandb(cfg):
         dataset_name = "qm9_h"
     kwargs = {
         "name": cfg.general.name,
-        "project": f"DiGressV2_{dataset_name}",
+        "project": f"ConStruct_{dataset_name}",
         "config": config_dict,
         "settings": wandb.Settings(_disable_stats=True),
         "reinit": True,
