@@ -529,16 +529,6 @@ class DiscreteDenoisingDiffusion(pl.LightningModule):
             y=None,
         )
 
-        # NLL computation when zeroing some of the entries (not equivalent to planar projection)
-        # if self.cfg.model.rev_planar_proj:
-        #     t0 = time.time()
-        #     collapsed_z_t = z_t.collapse(self.collapse_charges)
-        #     pred = planar_utils.do_zero_prob_forbidden_edges(
-        #         pred, collapsed_z_t, clean_data
-        #     )
-        #     t1 = time.time()
-        #     print(f"Time to do zero prob edges: {t1-t0:.2f}s")
-
         Qtb = self.noise_model.get_Qt_bar(z_t.t_int)
         Qsb = self.noise_model.get_Qt_bar(s_int)
         Qt = self.noise_model.get_Qt(t_int)
